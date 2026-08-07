@@ -3,6 +3,7 @@ use std::io::Write;
 
 // To Use library declare file path under your dependencies section in your Cargo.toml file.
 // By convention use the royUtils in the name declaration.
+// like so - royUtils = { git = "git@github.com:RoyBabayof/rust-utils.git", package = "royUtils" }
 
 pub fn write_to_file(file_path: &String, data: &String) -> std::io::Result<()>{
     let mut file = OpenOptions::new().append(true).create(true).open(file_path)?;
@@ -12,7 +13,7 @@ pub fn write_to_file(file_path: &String, data: &String) -> std::io::Result<()>{
 
 pub fn delete_from_file(file_path: &String) -> std::io::Result<()>{
     std::fs::remove_file(file_path)?;
-    Ok(());
+    Ok(())
 }
 
 
