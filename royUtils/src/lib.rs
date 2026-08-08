@@ -16,6 +16,13 @@ pub fn delete_from_file(file_path: &String) -> std::io::Result<()>{
     Ok(())
 }
 
+pub fn read_from_file(file_path: &String) -> std::io::Result<String> {
+    let mut file = OpenOptions::new().read(true).open(file_path)?;
+    let mut contents = String::new();
+    file.read_to_string(&mut contents)?;
+    Ok(())
+}
+
 
 #[cfg(test)]
 mod test{
