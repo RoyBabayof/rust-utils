@@ -8,8 +8,8 @@ use std::fs;
 
 pub fn write_to_file(file_path: &String, data: &String) -> std::io::Result<()>{
     let mut file = OpenOptions::new().append(true).create(true).open(file_path)?;
-    writeln!(file, "Hello, world!")?;
-    Ok(()) // function returns an err or ok signal
+    writeln!(file,"{}", data)?;
+    Ok(()) 
 }
 
 pub fn delete_from_file(file_path: &String) -> std::io::Result<()>{
@@ -21,5 +21,16 @@ pub fn read_from_file(file_path: &String) -> std::io::Result<String> {
     let content = fs::read_to_string(file_path)?;
     Ok(content)
 }
+
+pub fn find_largest_integer_in_vector(v: &Vec<i64>) -> i64{
+    let mut max: i64 = v[0];
+    for element in v.iter() {
+        if max < *element {
+            max = *element;
+        }
+    }
+    max
+}
+
 
 
