@@ -17,7 +17,7 @@ pub fn delete_from_file(file_path: &String) -> std::io::Result<()>{
 }
 
 pub fn read_from_file(file_path: &String) -> std::io::Result<String> {
-    let content = read_to_string(file_path)?;
+    let content = fs::read_to_string(file_path)?;
     Ok(())
 }
 
