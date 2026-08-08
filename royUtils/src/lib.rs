@@ -1,6 +1,7 @@
 use std::fs::OpenOptions;
 use std::io::Write;
 use std::io::Read;
+use std::fs;
 // To Use library declare file path under your dependencies section in your Cargo.toml file.
 // By convention use the royUtils in the name declaration.
 // like so - royUtils = { git = "https://git@github.com/RoyBabayof/rust-utils.git", package = "royUtils" }
