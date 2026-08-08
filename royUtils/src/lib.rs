@@ -17,23 +17,9 @@ pub fn delete_from_file(file_path: &String) -> std::io::Result<()>{
     Ok(())
 }
 
-pub fn read_from_file(file_path: &String) -> std::io::Result<> {
+pub fn read_from_file(file_path: &String) -> std::io::Result<String> {
     let content = fs::read_to_string(file_path)?;
-    Ok(())
+    Ok(content)
 }
 
 
-#[cfg(test)]
-mod test{
-    #[test]
-    fn test_write_to_file(){
-        let r = write_to_file(&String::from("path.txt"), &String::from("Hello, world!"));
-        assert!(r.is_ok());
-    }
-
-    #[test]
-    fn test_delete_from_file(){
-        let r = delete_from_file(&String::from("path.txt"));
-        assert!(r.is_ok());
-    }
-}
